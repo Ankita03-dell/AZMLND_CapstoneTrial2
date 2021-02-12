@@ -1,4 +1,5 @@
 from sklearn.linear_model import LogisticRegression
+from azureml.core import Workspace, Experiment
 import argparse
 import os
 import numpy as np
@@ -8,62 +9,85 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 import pandas as pd
 from azureml.core.run import Run
+from azureml.core import Dataset
 from azureml.data.dataset_factory import TabularDatasetFactory
+from azureml.core import Workspace, Dataset
+
+
 
 def clean_data(data):
-    # Dict for cleaning data
-    months = {"jan":1, "feb":2, "mar":3, "apr":4, "may":5, "jun":6, "jul":7, "aug":8, "sep":9, "oct":10, "nov":11, "dec":12}
-    weekdays = {"mon":1, "tue":2, "wed":3, "thu":4, "fri":5, "sat":6, "sun":7}
 
     # Clean and one hot encode data
     x_df = data.to_pandas_dataframe().dropna()
-    jobs = pd.get_dummies(x_df.job, prefix="job")
-    x_df.drop("job", inplace=True, axis=1)
-    x_df = x_df.join(jobs)
-    x_df["marital"] = x_df.marital.apply(lambda s: 1 if s == "married" else 0)
-    x_df["default"] = x_df.default.apply(lambda s: 1 if s == "yes" else 0)
-    x_df["housing"] = x_df.housing.apply(lambda s: 1 if s == "yes" else 0)
-    x_df["loan"] = x_df.loan.apply(lambda s: 1 if s == "yes" else 0)
-    contact = pd.get_dummies(x_df.contact, prefix="contact")
-    x_df.drop("contact", inplace=True, axis=1)
-    x_df = x_df.join(contact)
-    education = pd.get_dummies(x_df.education, prefix="education")
-    x_df.drop("education", inplace=True, axis=1)
-    x_df = x_df.join(education)
-    x_df["month"] = x_df.month.map(months)
-    x_df["day_of_week"] = x_df.day_of_week.map(weekdays)
-    x_df["poutcome"] = x_df.poutcome.apply(lambda s: 1 if s == "success" else 0)
-
-    y_df = x_df.pop("y").apply(lambda s: 1 if s == "yes" else 0)
-    return x_df,y_df
     
+    #following columns are not required for training
+    x_df.drop(["enrollee_id", "city"], axis=1, inplace=True)
+    
+    #gender column include values male, female and others
+    gender = pd.get_dummies(x_df.gender, prefix="gender")
+    x_df.drop("gender", inplace=True, axis=1)
+    x_df.join(gender)
+    
+    #relevant experience:1, not experienced:0
+    x_df["relevent_experience"] = x_df.relevent_experience.apply(lambda s: 1 if s == "Has relevent experience" else 0)
+
+    enrolled_university = pd.get_dummies(x_df.enrolled_university, prefix="university")
+    x_df.drop("enrolled_university", axis=1, inplace=True)
+    x_df.join(enrolled_university)  
+    education_level = pd.get_dummies(x_df.education_level, prefix="education")
+    x_df.drop("education_level", axis=1, inplace=True)
+    x_df.join(education_level)
+    major_discipline = pd.get_dummies(x_df.major_discipline, prefix="major_disci")
+    x_df.drop("major_discipline", axis=1, inplace=True)
+    x_df.join(major_discipline)
+    experience = pd.get_dummies(x_df.experience, prefix="experience")
+    x_df.drop("experience", axis=1, inplace=True)
+    x_df.join(experience)
+    company_size = pd.get_dummies(x_df.company_size, prefix="company_size")
+    x_df.drop("company_size", axis=1, inplace=True)
+    x_df.join(company_size)
+    company_type = pd.get_dummies(x_df.company_type, prefix="company_type")
+    x_df.drop("company_type", axis=1, inplace=True)
+    x_df.join(company_type)
+    last_new_job = pd.get_dummies(x_df.last_new_job, prefix="last_new_job")
+    x_df.drop("last_new_job", axis=1, inplace=True)
+    x_df.join(last_new_job)
+
+    
+
+    y_df = x_df.pop("target")
+    
+    return x_df, y_df
+
+
+
+
+
 
 def main():
     # Add arguments to script
     parser = argparse.ArgumentParser()
 
+    url='https://raw.githubusercontent.com/Ankita03-dell/AZMLND_CapstoneTrial2/main/data/aug_test.csv'
+    ds = Dataset.Tabular.from_delimited_files(path =url)
+    
+    run = Run.get_context()
+
     parser.add_argument('--C', type=float, default=1.0, help="Inverse of regularization strength. Smaller values cause stronger regularization")
     parser.add_argument('--max_iter', type=int, default=100, help="Maximum number of iterations to converge")
 
     args = parser.parse_args()
-    
-    #Created TabularDataset using TabularDatasetFactory
-    datapath="https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
-    ds=TabularDatasetFactory.from_delimited_files(path=datapath)
-    
-    x, y = clean_data(ds)
-    
-    #Splitted data into train and test sets
-    x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.33)
-    
-    run = Run.get_context()
+
     run.log("Regularization Strength:", np.float(args.C))
     run.log("Max iterations:", np.int(args.max_iter))
 
-    model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
-
-    accuracy = model.score(x_test, y_test)
-    run.log("Accuracy", np.float(accuracy))
+    x, y = clean_data(ds)
+    x_train, x_test , y_train, y_test = train_test_split(x, y, test_size=10, random_state=42)
+    
+    hd_model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
+    joblib.dump(hd_model,'outputs/hd_model.joblib')
+    accuracy = hd_model.score(x_test, y_test)
+    run.log("Accuracy:", np.float(accuracy))
 
 if __name__ == '__main__':
     main()
