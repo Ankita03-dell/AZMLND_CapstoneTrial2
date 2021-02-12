@@ -68,7 +68,7 @@ def main():
     # Add arguments to script
     parser = argparse.ArgumentParser()
 
-    url='https://raw.githubusercontent.com/Ankita03-dell/AZMLND_CapstoneTrial2/main/data/aug_test.csv'
+    url='https://raw.githubusercontent.com/Ankita03-dell/AZMLND_CapstoneTrial2/main/aug_train.csv'
     ds = Dataset.Tabular.from_delimited_files(path =url)
     
     run = Run.get_context()
@@ -82,7 +82,7 @@ def main():
     run.log("Max iterations:", np.int(args.max_iter))
 
     x, y = clean_data(ds)
-    x_train, x_test , y_train, y_test = train_test_split(x, y, test_size=10, random_state=42)
+    x_train, x_test , y_train, y_test = train_test_split(x, y, test_size=0.33, random_state=42)
     
     hd_model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
     joblib.dump(hd_model,'outputs/hd_model.joblib')
