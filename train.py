@@ -87,7 +87,7 @@ def main():
     hd_model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
     joblib.dump(hd_model,'outputs/hd_model.joblib')
     accuracy = hd_model.score(x_test, y_test)
-    run.log("Accuracy:", np.float(accuracy))
+    run.log("Accuracy", np.float(accuracy))
 
 if __name__ == '__main__':
     main()
