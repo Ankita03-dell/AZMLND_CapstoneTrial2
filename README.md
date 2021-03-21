@@ -106,6 +106,15 @@ To improve these results, we can further try different ranges of hyperparameters
 
 The best model from AutoML(Voting Ensemble) was deployed. An inference config was created using the score.py file and the service was deployed using the following code:
 
+![model_deployment](https://user-images.githubusercontent.com/55974694/111918110-8cb96b00-8aa9-11eb-8cbb-81d8f7c71ca9.png)
+
+
+![Deployment_active_state(1)](https://user-images.githubusercontent.com/55974694/111918123-9c38b400-8aa9-11eb-9d3e-2f3c85e83b6e.png)
+
+
+![Deployment_active_state(2)](https://user-images.githubusercontent.com/55974694/111918130-a5c21c00-8aa9-11eb-970c-d1f86de1fac7.png)
+
+
 ## Future Work
 
 1.     One of the thing that we have noticed in this project is that the target variable is imbalanced. We can take actions to account for that
