@@ -37,7 +37,8 @@ The data can be accessed by downloading the data into local server and then uplo
 
 
 ## Automated ML
-Below is the screenshot of the configurations we used for automl.
+Below is the screenshot of the configurations I used for automl.
+
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
