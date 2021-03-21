@@ -48,7 +48,15 @@ The first configuration that we used here is experiment timeout time. Here we ha
 
 ![runwidget_automl(1)](https://user-images.githubusercontent.com/55974694/111917278-2599b780-8aa5-11eb-8b96-16b0d12038ce.png)
 
+![runwidget_automl(2)](https://user-images.githubusercontent.com/55974694/111917281-2f231f80-8aa5-11eb-9a5b-ae57cd85e18f.png)
 
+![runwidget_AutoML(3)](https://user-images.githubusercontent.com/55974694/111917286-33e7d380-8aa5-11eb-91cf-d2a499e8a2b0.png)
+
+![Best_AutoML(1)](https://user-images.githubusercontent.com/55974694/111917304-482bd080-8aa5-11eb-9d9c-f284b1aa8538.png)
+
+![Best_AutoML(2)](https://user-images.githubusercontent.com/55974694/111917320-524dcf00-8aa5-11eb-8c2a-9871e30e983e.png)
+
+![Best_AutoMLmodel_RunId](https://user-images.githubusercontent.com/55974694/111917322-57ab1980-8aa5-11eb-9975-cc76d64ca1ae.png)
 
 
 ## Hyperparameter Tuning
