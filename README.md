@@ -86,12 +86,30 @@ The two parameters: '--C' (Inverse of regularization strength. Smaller values ca
 The choice used for C are (0.5,1.0), while that for max iterations are (5,10,20,30,40,50,100,150,200,250,300).
 
 ### Results
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
+![runwidget_hyperdrive(1)](https://user-images.githubusercontent.com/55974694/111917699-71e5f700-8aa7-11eb-8341-1f97ca6da01c.png)
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+![runwidget_hyperdrive(1A)](https://user-images.githubusercontent.com/55974694/111917705-76121480-8aa7-11eb-9398-34e468a75616.png)
+
+![runwidget_hyperdrive(2)](https://user-images.githubusercontent.com/55974694/111917706-76aaab00-8aa7-11eb-87ce-8f2d351f19b8.png)
+
+![runwidget_hyperdrive(3)](https://user-images.githubusercontent.com/55974694/111917707-77434180-8aa7-11eb-9f14-f0176a2f919f.png)
+
+As we can see from the screenshots above,  the best accuracy of 84.03% is obtained.
+
+To improve these results, we can further try different ranges of hyperparameters here. However, the best thing would be to handle the class imbalance in the dataset.
+
 
 ## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+
+The best model from AutoML(Voting Ensemble) was deployed. An inference config was created using the score.py file and the service was deployed using the following code:
+
+## Future Work
+
+1.     One of the thing that we have noticed in this project is that the target variable is imbalanced. We can take actions to account for that
+
+2.     We can try different primary metrics instead of accuracy as accuracy can be biased if the dataset is imbalanced
+
+3.     Feature Selection can be performed to select only thsoe features that positively contribute to the prediction of the outcome variable
 
 ## Screen Recording
 
