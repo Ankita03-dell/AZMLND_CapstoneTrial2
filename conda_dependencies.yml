@@ -6,16 +6,18 @@ dependencies:
 - python=3.6.2
 - pip=20.2.4
 - pip:
-  - azureml-core==1.21.0.post1
-  - azureml-pipeline-core==1.21.0
-  - azureml-telemetry==1.21.0
-  - azureml-defaults==1.21.0
-  - azureml-interpret==1.21.0
-  - azureml-automl-core==1.21.0
-  - azureml-automl-runtime==1.21.0
-  - azureml-train-automl-client==1.21.0
-  - azureml-train-automl-runtime==1.21.0
-  - azureml-dataset-runtime==1.21.0
+  - azureml-core==1.24.0.post1
+  - azureml-pipeline-core==1.24.0
+  - azureml-telemetry==1.24.0
+  - azureml-defaults==1.24.0
+  - azureml-interpret==1.24.0
+  - azureml-automl-core==1.24.0
+  - azureml-automl-runtime==1.24.0
+  - azureml-train-automl-client==1.24.0
+  - azureml-train-automl-runtime==1.24.0
+  - azureml-dataset-runtime==1.24.0
+  - azureml-dataprep==2.11.2
+  - azureml-mlflow==1.24.0
   - inference-schema
   - py-cpuinfo==5.0.0
   - boto3==1.15.18
@@ -28,4 +30,4 @@ dependencies:
 - holidays==0.9.11
 - setuptools-git
 - psutil>5.0.0,<6.0.0
-name: azureml_20a8278aa8b20dd48cc50f56a6d2586c
+name: azureml_2b14f450572e78de640d54eaabed5e4d

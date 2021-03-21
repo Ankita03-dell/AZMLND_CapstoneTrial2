@@ -1,6 +1,6 @@
 {
     "name": "AutoML-AzureML-AutoML",
-    "version": "Autosave_2021-03-20T17:38:44Z_adda0f97",
+    "version": "Autosave_2021-03-21T12:03:01Z_2ce36da2",
     "environmentVariables": {
         "EXAMPLE_ENV_VAR": "EXAMPLE_VALUE"
     },
@@ -12,7 +12,7 @@
     },
     "docker": {
         "enabled": true,
-        "baseImage": "mcr.microsoft.com/azureml/intelmpi2018.3-ubuntu16.04:20210220.v1",
+        "baseImage": "mcr.microsoft.com/azureml/intelmpi2018.3-ubuntu16.04:20210301.v1",
         "baseDockerfile": null,
         "sharedVolumes": true,
         "shmSize": null,
