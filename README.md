@@ -94,6 +94,9 @@ The choice used for C are (0.5,1.0), while that for max iterations are (5,10,20,
 
 ![runwidget_hyperdrive(3)](https://user-images.githubusercontent.com/55974694/111917707-77434180-8aa7-11eb-9f14-f0176a2f919f.png)
 
+
+![Best_Hyperdrivemodel_RunId](https://user-images.githubusercontent.com/55974694/111918037-364c2c80-8aa9-11eb-871d-082b228072aa.png)
+
 As we can see from the screenshots above,  the best accuracy of 84.03% is obtained.
 
 To improve these results, we can further try different ranges of hyperparameters here. However, the best thing would be to handle the class imbalance in the dataset.
