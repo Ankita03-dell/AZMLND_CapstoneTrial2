@@ -38,7 +38,9 @@ The data can be accessed by downloading the data into local server and then uplo
 
 ## Automated ML
 Below is the screenshot of the configurations I used for automl.
+
 ![AutoML_Config](https://user-images.githubusercontent.com/55974694/111916814-c9359880-8aa2-11eb-824f-f8a61a4c191a.png)
+
 The first configuration that we used here is experiment timeout time. Here we have used 30 mins as the maximum times as such automations do take a longer amount of time to run and can cost significantly high. Next, for the task, we have selected classification as we are predicting a categorical variable here and that comes under the category of classification. The next configuartion that we have selected here is primary metric. Since we are comparing models here based on their prediciting power, accuracy has been used here. The target variable that we have provided is 'Target' as that is the feature of this model that we are predicting.
 
 
