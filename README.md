@@ -30,6 +30,7 @@ target: 0 – Not looking for job change, 1 – Looking for a job change
 The data can be accessed by downloading the data into local server and then uploading it to Dataset subsection of Microsoft AzureML.
 
 ![Dataset(1)](https://user-images.githubusercontent.com/55974694/111916681-1b29ee80-8aa2-11eb-9e43-8f6e47db92c2.png)
+![Dataset(2)](https://user-images.githubusercontent.com/55974694/111916763-896eb100-8aa2-11eb-8ef9-4b0341bb9914.png)
 
 
 
