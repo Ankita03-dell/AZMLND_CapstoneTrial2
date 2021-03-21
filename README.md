@@ -119,6 +119,19 @@ From the screenshots above, we can also verify from the azure portal that the mo
 
 After this, we tested the model endpoint by providing dummy data to see the results. Below is the screenshot of the test data used to test the endoint:
 
+![endpoint](https://user-images.githubusercontent.com/55974694/111918147-bbcfdc80-8aa9-11eb-8d4d-b1779af76324.png)
+
+
+![Deployment_test](https://user-images.githubusercontent.com/55974694/111918151-bd99a000-8aa9-11eb-9812-d4d2d35db94e.png)
+
+
+![Deployment_result](https://user-images.githubusercontent.com/55974694/111918152-be323680-8aa9-11eb-9966-116421b4f36c.png)
+
+
+In the screenshot above, we can see that we are providing to cases to test the deployed model. The model returns the output as 0.0,0.0 and 0.0 . This means that based on Voting Ensemble model, the first set of parameters would mean that the employee is not looking for a job change, the second set of parameters would mean that the employee is not looking for a job change and the third set of parameters would mean that the employee is also not looking for a job change.
+
+
+
 
 ## Future Work
 
