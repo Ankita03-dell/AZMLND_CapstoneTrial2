@@ -46,6 +46,8 @@ The first configuration that we used here is experiment timeout time. Here we ha
 
 ### Results
 
+![runwidget_automl(1)](https://user-images.githubusercontent.com/55974694/111917278-2599b780-8aa5-11eb-8b96-16b0d12038ce.png)
+
 
 
 
