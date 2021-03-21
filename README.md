@@ -115,6 +115,11 @@ The best model from AutoML(Voting Ensemble) was deployed. An inference config wa
 ![Deployment_active_state(2)](https://user-images.githubusercontent.com/55974694/111918130-a5c21c00-8aa9-11eb-970c-d1f86de1fac7.png)
 
 
+From the screenshots above, we can also verify from the azure portal that the model was successfully deployed and is in a healthy state.
+
+After this, we tested the model endpoint by providing dummy data to see the results. Below is the screenshot of the test data used to test the endoint:
+
+
 ## Future Work
 
 1.     One of the thing that we have noticed in this project is that the target variable is imbalanced. We can take actions to account for that
