@@ -52,9 +52,6 @@ The first configuration that we used here is experiment timeout time. Here we ha
 
 ![runwidget_AutoML(3)](https://user-images.githubusercontent.com/55974694/111917286-33e7d380-8aa5-11eb-91cf-d2a499e8a2b0.png)
 
-![Best_AutoML(1)](https://user-images.githubusercontent.com/55974694/111917304-482bd080-8aa5-11eb-9d9c-f284b1aa8538.png)
-
-![Best_AutoML(2)](https://user-images.githubusercontent.com/55974694/111917320-524dcf00-8aa5-11eb-8c2a-9871e30e983e.png)
 
 Best Run model-ID and accuracy, along with other parameters:
 
@@ -76,7 +73,17 @@ The model can be improved by increasing the number of iterations or trying for v
 
 ## Hyperparameter Tuning
 
+For this technique, I decided to choose logistic regression as:
 
+1.   It is the most basic algorithm when it comes to classification and one should always start from basic models.
+
+2.   It is easy to understand the results and simple to train
+
+3.   The execution time is very fast
+
+The two parameters: '--C' (Inverse of regularization strength. Smaller values cause stronger regularization) and '--max_iter' (Maximum number of iterations to converge) are selected for tuning using HyperDrive.
+
+The choice used for C are (0.5,1.0), while that for max iterations are (5,10,20,30,40,50,100,150,200,250,300).
 
 ### Results
 *TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
