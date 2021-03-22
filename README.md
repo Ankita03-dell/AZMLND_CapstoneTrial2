@@ -68,7 +68,7 @@ Best Run model-ID and accuracy, along with other parameters:
 ![Best_AutoML(2)](https://user-images.githubusercontent.com/55974694/111917320-524dcf00-8aa5-11eb-8c2a-9871e30e983e.png)
 
 
-From the screenshot above, we can see that Voting Ensemble was the best model with an accuracy of 80.04%
+From the screenshot below, we can see that Voting Ensemble was the best model with an accuracy of 80.04%
 
 
 ![Best_AutoMLmodel_RunId](https://user-images.githubusercontent.com/55974694/111917322-57ab1980-8aa5-11eb-9975-cc76d64ca1ae.png)
