@@ -122,7 +122,7 @@ Here's the screenshot of best results and optimized parameters obtained using Hy
 
 
 
-As we can see from the screenshot below,  the best accuracy of 84.03% is obtained.
+Here's the screenshot of the best hyperdrive model 
 
 
 ![Best_Hyperdrivemodel_RunId](https://user-images.githubusercontent.com/55974694/111918037-364c2c80-8aa9-11eb-871d-082b228072aa.png)
