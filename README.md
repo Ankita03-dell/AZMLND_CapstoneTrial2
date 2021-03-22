@@ -104,6 +104,9 @@ Run Details Widget
 Here's the screenshot of best results and optimized parameters obtained using HyperDrive
 
 
+![Configuration_hyperdrive](https://user-images.githubusercontent.com/55974694/111947547-b7d0a880-8b03-11eb-8d15-5d3e1d3cd89e.png)
+
+
 
 As we can see from the screenshot below,  the best accuracy of 84.03% is obtained.
 
@@ -117,10 +120,18 @@ To improve the results, we can further try different ranges of hyperparameters h
 ## Model Deployment
 
 
-As AutoML allows to build the models with high scale efficiency & productivity all while sustaining the model quality,the  model from AutoML(Voting Ensemble) was deployed. An inference config was created using the score.py file and the service was deployed using the following code:
+As AutoML allows to build the models with high scale efficiency & productivity all while sustaining the model quality,the  model from AutoML(Voting Ensemble) was deployed. 
+The model choosen with AutoML is choosen for deployment: Azure Container Instance is used for deployment of the model as webservice. 
+
+
+The details for method of deployment can be found in automl.ipynb under Model Deployment section.
+
+An inference config was created using the score.py file and the service was deployed using the following code:
 
 ![model_deployment](https://user-images.githubusercontent.com/55974694/111918110-8cb96b00-8aa9-11eb-8cbb-81d8f7c71ca9.png)
 
+
+From the screenshots below, we can also verify from the azure portal that the model was successfully deployed and is in a healthy state.
 
 ![Deployment_active_state(1)](https://user-images.githubusercontent.com/55974694/111918123-9c38b400-8aa9-11eb-9d3e-2f3c85e83b6e.png)
 
@@ -128,20 +139,26 @@ As AutoML allows to build the models with high scale efficiency & productivity a
 ![Deployment_active_state(2)](https://user-images.githubusercontent.com/55974694/111918130-a5c21c00-8aa9-11eb-970c-d1f86de1fac7.png)
 
 
-From the screenshots above, we can also verify from the azure portal that the model was successfully deployed and is in a healthy state.
+Now we can consume the endpoint using scoring URL genereated after deployment. The sample input to the endpoint is as below. This can also be found in endpoint.py file of the repository.
 
-After this, we tested the model endpoint by providing dummy data to see the results. Below is the screenshot of the test data used to test the endoint:
 
 ![endpoint](https://user-images.githubusercontent.com/55974694/111918147-bbcfdc80-8aa9-11eb-8d4d-b1779af76324.png)
+
+
+
+After this, we tested the model endpoint.
 
 
 ![Deployment_test](https://user-images.githubusercontent.com/55974694/111918151-bd99a000-8aa9-11eb-9812-d4d2d35db94e.png)
 
 
+
+**Result**
+
 ![Deployment_result](https://user-images.githubusercontent.com/55974694/111918152-be323680-8aa9-11eb-9966-116421b4f36c.png)
 
 
-In the screenshot above, we can see that we are providing to cases to test the deployed model. The model returns the output as 0.0,0.0 and 0.0 . This means that based on Voting Ensemble model, the first set of parameters would mean that the employee is not looking for a job change, the second set of parameters would mean that the employee is not looking for a job change and the third set of parameters would mean that the employee is also not looking for a job change.
+The model returns the output as 0.0,0.0 and 0.0 . This means that the first set of parameters would mean that the employee is not looking for a job change, the second set of parameters would mean that the employee is not looking for a job change and the third set of parameters would mean that the employee is also not looking for a job change.
 
 
 
