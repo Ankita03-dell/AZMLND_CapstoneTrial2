@@ -37,6 +37,11 @@ The data can be accessed by downloading the data into local server and then uplo
 
 
 ## Automated ML
+
+
+Automated Machine Learning is the process of automating the time-consuming, iterative tasks of ML model development. It allows to build the models with high scale efficiency & productivity all while sustaining the model quality.
+
+
 Below is the screenshot of the configurations I used for automl.
 
 ![AutoML_Config](https://user-images.githubusercontent.com/55974694/111916814-c9359880-8aa2-11eb-824f-f8a61a4c191a.png)
