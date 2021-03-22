@@ -68,11 +68,14 @@ Best Run model-ID and accuracy, along with other parameters:
 ![Best_AutoML(2)](https://user-images.githubusercontent.com/55974694/111917320-524dcf00-8aa5-11eb-8c2a-9871e30e983e.png)
 
 
+From the screenshot above, we can see that Voting Ensemble was the best model with an accuracy of 80.04%
+
+
 ![Best_AutoMLmodel_RunId](https://user-images.githubusercontent.com/55974694/111917322-57ab1980-8aa5-11eb-9975-cc76d64ca1ae.png)
 
 
 
-From the screenshot above, we can see that Voting Ensemble was the best model with an accuracy of 80.04% One of the major issue with this dataset is of class imbalance. That is something that can be taken care of to improve the prediction accuracy. Also, from the screenshot above we can see the parameters of the best auto ml model such as max_iter, n_jobs, etc.
+One of the major issue with this dataset is of class imbalance. That is something that can be taken care of to improve the prediction accuracy. Also, from the screenshots above we can see the parameters of the best auto ml model such as max_iter, n_jobs, etc.
 
 
 The model can be improved by increasing the number of iterations or trying for various cross-validation folds. Deep learning/neural network based classification can also be used for better results.
