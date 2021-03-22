@@ -10,7 +10,7 @@ Original file is located at
 import requests
 import json
 
-scoring_uri = "http://808cb467-696a-4c00-b51a-dc2a8dda2daf.southcentralus.azurecontainer.io/score"
+scoring_uri = "http://62222515-5a71-4175-a1ae-13605caa2184.southcentralus.azurecontainer.io/score"
 
 data = {"data":
         [
